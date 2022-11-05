@@ -1,0 +1,176 @@
+    <!-- Coursera title and overview-->
+    <div class="row justify-content-center title">
+        <div class="col-6 text-center">
+            <h2>Coursera</h2>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn-sm btn-secondary btn-course-overview" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Product Types Overview
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Product Types Overview</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Coursera Course Certificates start at <strong>$49</strong> and Certificates
+                                for Guided Projects start at <strong>$9.99</strong>.
+                                For Coursera Specializations and Professional Certificates there
+                                is a monthly cost of <strong>$39.99</strong>+ a month
+                                (so the final cost depends on how long it takes you to finish).
+                                A Coursera Plus subscription giving full certified access to 90%
+                                of the Coursera catalog is <strong>$399</strong> per year.</p>
+                            <table class="table table-dark table-striped">
+                            <thead>
+                                <tr>
+                                <th scope="col">Product Type</th>
+                                <th scope="col">Goal</th>
+                                <th scope="col">Length</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Billing</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row">Courses</th>
+                                <td>Gain knowledge</td>
+                                <td>4-12 hours</td>
+                                <td><strong>*Free</strong> or from $49</td>
+                                <td>Per course</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">Guided Projects</th>
+                                <td>Learn a skill</td>
+                                <td>1-2 hours</td>
+                                <td>From $9.99</td>
+                                <td>Per project</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">Specializations</th>
+                                <td>Master a skill</td>
+                                <td>1-3 months</td>
+                                <td>From $39.99 – with some <strong>*free</strong> content</td>
+                                <td>Monthly</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">Professional Certificates</th>
+                                <td>Get job ready for a (new) career</td>
+                                <td>4-7 months</td>
+                                <td>From $39.99</td>
+                                <td>Monthly</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">Coursera Plus</th>
+                                <td>Certified access to 90%+ of catalog</td>
+                                <td>various</td>
+                                <td>$59 or $399</td>
+                                <td>Monthly or annually</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">MasterTrack Certificates</th>
+                                <td>Earn credit towards a degree</td>
+                                <td>4-7 months</td>
+                                <td>From $2000</td>
+                                <td>Per course or Monthly</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            <p>*Free content does not include certificates.</p>
+                            <p>This <a href="https://learnopoly.com/coursera-cost/" target="_blank" rel="noopener noreferrer">blog article </a>explains in detail Coursera's pricing.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center border border-dark">
+        <!-- scrollspy -->
+        <div id="list-example" class="col-3 list-group">
+            {% for dict in course_vendors["coursera"][loop.index0] %}
+            <a class="list-group-item list-group-item-action" href="#list-item-{{ dict["ID"] }}">{{ dict["Course Name"] }}</a>
+            {% endfor %}
+        </div>
+        <!--list group-->
+        <div class="col-3 leftdiv">
+            <ul class="list-group">
+                {% for dict in course_vendors["coursera"][loop.index0] %}
+                <li class="list-group-item">{{ dict["Course Name"] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col padding-mobile">
+            <div class="scrollspy-example" id="rightdiv" data-bs-spy="scroll" data-bs-target="#list-example-{{ dict["ID"] }}" data-bs-offset="40" tabindex="0">
+                {% for dict in course_vendors["coursera"][loop.index0] %}
+                <div class="boxlayout" id="#list-item-{{ dict["ID"] }}">
+                <img src="{{ dict["Image URL"] }}" alt="" class="img" align="left" width="100px" height="100px">
+                    <h2 class="course-name">{{ dict["Course Name"] }}</h2>
+                    <table class="course-table">
+                    <tr>
+                        <td>Manufacturer/ Partner</td><td class="td-adjusted">{{ dict["Partner"] }}</td>
+                    <tr>
+                        <td>Product Type</td><td>{{ dict["Product Type"] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Costs</td><td>${{ dict["Current Price"] }}</td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn-sm btn-secondary btn-course-description" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ dict["ID"] }}">
+                                Course Description
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal-{{ dict["ID"] }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel-{{ dict["ID"] }}">Course Description</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ dict["Product Description"] }}
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+
+                        </td><td><a href="{{ dict["URL"] }}" target="_blank" rel="noopener noreferrer">Landing Page</a></td>
+                    </tr>
+                    </table>
+
+
+
+
+
+                    <!--
+                    <p class="button-wrap">
+                    <button class="btn-sm btn-light" id="course-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample-{{ dict["ID"]}}" aria-expanded="false" aria-controls="collapseExample">
+                        Course Description
+                    </button>
+                    </p>
+                    <div class="collapse" id="collapseExample-{{ dict["ID"]}}">
+                        <div class="card card-body">
+                            <p class="product-description">{{ dict["Product Description"] }}</p>
+                        </div>
+                    </div>
+                    -->
+
+
+
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+

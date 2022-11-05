@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+
+<div class="container-fluid no-padding">
+  <video class="desktop-video" playsinline autoplay muted loop preload>
+    <source src="static/images/background_horizontal.mov" type="video/quicktime">
+    Your browser does not support the video tag.
+  </video>
+  <video class="mobile-video" playsinline autoplay muted loop>
+    <source src="static/images/background_vertical.mov" type="video/quicktime">
+    Your browser does not support the video tag.
+  </video>
+  <div class="row justify-content-center">
+    <div class="col-12 d-md-block text-center sizingText-div-1">
+      <h1>Online Digital Skills Consultant</h1>
+      <p style="color: lightgray;">Click on <b>"Get Started"</b> to get presonalized recommendations on how to improve your digital skills.</p>
+          <button type="button" class="btn btn-outline-light btn-lg qs">Get Started</button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

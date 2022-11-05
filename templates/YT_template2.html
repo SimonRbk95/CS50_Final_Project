@@ -1,0 +1,53 @@
+{% set id = loop.index0 + 3 %}
+
+<!--set data-bs-interval to false to stop automatic transitioning and delete data-bs-ride-->
+    <div class="col text-center">
+        <div class="title">
+            <!--hard coded first index corresponding to basic tech videos and second to programming ones-->
+            <h2>Relevant {{ key }} videos
+            <small class="text-muted"></small></h2>
+        </div>
+    </div>
+  <div class="row justify-content-center border border-dark YT-border-padding">
+    <div id="carouselExampleCaptions-{{ id }}" class="carousel slide carousel-fade" data-bs-interval="false">
+      <div class="carousel-indicators YT-carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions-{{ id }}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions-{{ id }}" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions-{{ id }}" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <!--course_videos index based on List_q3-->
+        {% for list in course_videos[loop.index0] %}
+        {% if loop.index0 == 0 %}
+        <div class="carousel-item active">
+        {% else %}
+        <div class="carousel-item">
+        {% endif %}
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+              <div class="ratio ratio-16x9" id="bottom-section">
+                <iframe
+                style="border: 0px;"
+                class="shadow-1-strong rounded"
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/{{ list["videoId"] }}"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+      <button class="carousel-control-prev YT-prev" type="button" data-bs-target="#carouselExampleCaptions-{{ id }}" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next YT-next" type="button" data-bs-target="#carouselExampleCaptions-{{ id}}" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>

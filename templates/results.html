@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+
+  <!--Info-->
+  <div class="container-lg">
+    <div class="row justify-content-center title border border-dark">
+      <div class="col-11 text-center">
+        <h1>Personalized Suggestions</h1><br>
+          <h4>Based on your input, this website lists relevant courses from <i>Coursera</i> and free videos to get started.</h4><br>
+            <!--https://www.mckinsey.de/business-functions/people-and-organizational-performance/our-insights/getting-practical-about-the-future-of-work-->
+          <p class="quote"> “To stay relevant — not just economically,
+                             but above all socially, you will need the ability
+                             to constantly learn and reinvent yourself,” —
+                             <i>Yuval Noah Harari, 21 Lessons for the 21st Century</i>
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <!--YT Intro Videos-->
+  <div class="container-lg result-background">
+  {% include "YT_template1.html" %}
+  </div>
+
+<!--course displays-->
+{% for option in List_q3_options %}
+  <div class="container-lg result-background">
+    <div class="row justify-content-center course-title border-bottom border-dark">
+      <div class="col-11 text-center">
+
+          <h1>{{ List_q3_options[loop.index0] }}</h1>
+      </div>
+    </div>
+
+<!--Course vendors-->
+    {% include "coursera_courses.html" %}
+
+    <!--
+    edx
+    {# for dict in course_vendors["edx"][loop.index0] #}
+    {# endfor #}
+    udacity
+    {# for dict in course_vendors["udacity"][loop.index0] #}
+    {# endfor #}
+    -->
+
+    <!--YT videos choice specific-->
+    {% include "YT_template2.html" %}
+  </div>
+{% endfor %}
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,724 @@
+body {
+    background-color: black !important;
+    color: white !important;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+}
+
+html {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow: -moz-scrollbars-none;
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+/*--- carousel customization ---*/
+.sizingText-div-1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-38%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sizingText-div-2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-45%);
+    margin-right: 38%;
+    margin-left: auto;
+}
+
+.carousel-caption h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 80px;
+    text-shadow: 1px 1px 10px #000;
+    color: white
+}
+
+
+.carousel-caption p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+
+/*--- fixed height will get rid of the flickering but requires specification in all media queries---*/
+.carousel-inner img {
+    width: 100%;
+    max-height: 90vh;
+}
+
+#container-select {
+    margin-top: 10%;
+}
+
+#container-submit {
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+/* course display */
+.img{
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.boxlayout {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.course-table{
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 2%;
+}
+
+td{
+    padding-right: 0;
+    padding-left: 0;
+    color: #DDDDDD;
+    width: 400px;
+
+}
+
+tr:hover{
+    background-color: rgba(40, 40, 40, 0.5);
+}
+
+.result-background{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: linear-gradient(to bottom, #000, #040404, #070707, #0b0b0b, #0e0e0e, #0e0e0e, #0e0e0e, #0e0e0e, #0b0b0b, #070707, #040404, #000);
+}
+
+.card{
+    background-color: transparent;
+    border: 1px solid rgba(206, 195, 195, 0.13); max-width: 90%;
+}
+
+.card-body{
+    margin-bottom: 2%;
+}
+
+.border{
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-bottom: 1em;
+    padding-top: 1em;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.border-bottom{
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-bottom: 1em;
+    padding-top: 1em;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+div.result-background:hover {
+    background-image: linear-gradient(to bottom, #000000, #070707, #0e0e0e, #131313, #171717, #171717, #171717, #171717, #131313, #0e0e0e, #070707, #000000);
+    -webkit-transition: background-image 1000ms linear;
+    -ms-transition: background-image 1000ms linear;
+    transition: background-image 1000ms linear;
+}
+
+.title{
+    margin-top: 50px;
+}
+
+.modal-content{
+    background-color: rgb(35, 35, 35);
+}
+
+.modal-footer{
+    border-top: 1px solid rgba(150, 150, 150, 0.5);
+}
+
+.modal-header{
+    border-bottom: 1px solid rgba(150, 150, 150, 0.5);
+}
+
+/*--- glow effect ---*/
+@keyframes changeFilter {
+0% {
+    filter: brightness(50%);
+}
+20%{
+    filter: brightness(63%);
+}
+50% {
+    filter: brightness(68%);
+}
+100% {
+    filter: brightness(75%);
+}
+
+}
+
+@keyframes AnimateBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/*.darkened-image {
+    animation: changeFilter 6s infinite;
+    background-image: url('/images/background_1.png');
+    width: 100%;
+    max-height: 100%;
+}*/
+
+/*--- footer customization ---*/
+
+.center {
+    margin-left: 42.5%;
+    margin-right: 50%;
+}
+
+
+.footerText{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.color-customclass {
+    background-color: black;
+}
+
+/*-- this can only be used to center the badge via JS once the DOM is fully loaded because many divs get imported--*/
+.profile-badge {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    margin-bottom: 20%;
+    margin-top: 15%;
+}
+
+footer {
+    margin-top: 8%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.menu-margins {
+    margin-bottom: 120px;
+}
+
+.show-tick{
+    width: 120px;
+}
+
+.dropdown-item.active {
+    background-color: transparent;
+}
+
+.bootstrap-select .bs-ok-default::after{
+    color: black;
+}
+
+span.text{
+    color: black;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 1%;
+    margin-top: 15%;
+}
+
+.scrollspy-example{
+    position: relative;
+    overflow-y: scroll;
+    height: 300px;
+}
+
+.product-description{
+    color: white;
+}
+
+.button-wrap{
+    min-width: 700px;
+}
+
+#list-example{
+    display: none;
+}
+
+.btn-new{
+    background-color: black;
+    border-color: #444446;
+    color: rgb(225, 225, 225);
+}
+
+.btn-new:hover{
+    border-color: #0b0b0b;
+    background-color: #d5d6d9;
+}
+
+div.profile-badge.profile-badge--width-280.profile-badge--dark{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+#my-badge{
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+.list-group{
+    font-size: 18px;
+}
+
+.list-group-item{
+    background-color: rgba(40, 40, 40, .25);
+    border: 1px solid rgba(100,100,100,.5);
+    color: rgb(225, 225, 225);
+}
+
+.YT-carousel-indicators{
+    transform: translateY(55px)
+}
+
+.YT-border-padding{
+    padding-bottom: 3em;
+}
+
+.blockquote-footer{
+    font-size: 1em;
+}
+
+.blockquote-footer::before {
+    content: none;
+    }
+
+.text-center{
+    text-align: center;
+}
+
+.course-title{
+    margin-top: 10%;
+}
+
+.quote{
+    color: gray;
+}
+
+#btn-submit-questionnaire{
+    min-width: 300px;
+}
+
+video{
+    width: 100vw;
+    filter: brightness(80%);
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.mobile-video{
+    display: none !important;
+}
+
+.mobile-select{
+    display: none !important;
+}
+
+video::-webkit-media-controls{
+    display: none !important;
+}
+
+/*--- media queries ---*/
+@media only screen and (max-width: 768px) {
+
+    p.landing-page{
+        font-size: 16px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .dark-video{
+        filter: brightness(50%);
+    }
+
+    .darkened-image {
+        background-image: url('/images/background_vertical.png');
+        max-height: 90vh;
+    }
+
+    .darkened-image-2 {
+        background-image: url('/images/background_2.png');
+        max-height: 90vh;
+    }
+
+    .desktop-video{
+        display: none !important;
+    }
+
+    .mobile-video{
+        display: inline !important;
+    }
+
+
+    .sizingText-div-1{
+        top: 40%;
+        max-width: 90%;
+    }
+
+    .sizingText-div-2 {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-65%);
+        margin-right: auto;
+    }
+
+    .carousel-caption h1 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 14px;
+    }
+
+    .carousel-caption p {
+        font-size: 10px;
+    }
+
+    .footerText{
+        font-size: 11px;
+        margin-bottom: 5%;
+    }
+
+    #my-badge{
+        display: none;
+    }
+
+    .btn-lg {
+        width: 150px;
+        height: 50px;
+        padding: 0;
+        font-size: 18px;
+    }
+
+    .carousel-indicators{
+        bottom: -18px;
+    }
+
+    #certificate{
+        min-width: 100px;
+    }
+
+    /* questionnaire */
+    h5{
+        font-size: 16px;
+    }
+
+    #btn-submit-questionnaire{
+        min-width: 150px;
+        min-height: 40px;
+    }
+
+    .mobile-select{
+        display: inline !important;
+        width: 50%;
+    }
+
+    .desktop-select{
+        display: none !important;
+    }
+
+
+    /* results */
+
+    h4{
+        font-size: 18px;
+    }
+
+    .course-name{
+        font-size: 13px;
+        min-height: 36px;
+        margin-bottom: 3px;
+    }
+
+    .quote{
+        font-size: 14px;
+    }
+
+    #list-example{
+        display: none;
+    }
+
+    .list-group{
+        display: none;
+    }
+
+    .col-3.leftdiv{
+        display: none;
+    }
+
+    img.img{
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+        margin-left: 0;
+    }
+
+    td{
+        width: 200px;
+    }
+
+    .td-adjusted{
+        width: 280px;
+    }
+
+    .btn-course-overview{
+        font-size: 12px;
+        margin-bottom: 5%;
+    }
+
+    .btn-course-description{
+        font-size: 10px;
+        padding: 3px;
+        width: 90%;
+    }
+
+    .course-table{
+        font-size: 10px;
+        table-layout: fixed;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    #course-button{
+        width: auto;
+        margin-left: 12%;
+    }
+
+    .product-description{
+        font-size: 10px;
+    }
+
+    .card-body{
+        width: auto;
+        margin-left: 10%;
+    }
+
+    .scrollspy-example{
+        height: 150px;
+    }
+
+    .padding-mobile{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .button-wrap{
+        min-width: 100px;
+    }
+
+    .table.table-dark.table-striped{
+        font-size: 10px;
+    }
+
+    .modal-dialog-scrollable .modal-content{
+        font-size: 12px;
+    }
+
+
+/* -- YT-carousel*/
+
+    .col-md-6{
+        max-width: 95%;
+    }
+
+    .YT-border-padding{
+        padding-bottom: 2em;
+    }
+
+
+    .YT-carousel-indicators{
+        transform: translateY(28px);
+    }
+
+    .YT-prev{
+        transform: translateX(-20px);
+    }
+
+    .YT-next{
+        transform: translateX(18px);
+    }
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .sizingText-div-1 {
+        max-width: 65%;
+        top: 50%;
+        transform: translateY(-40%);
+    }
+
+    .sizingText-div-2 {
+        top: 40%;
+        transform: translateY(-45%);
+
+    }
+
+    .carousel-caption h1 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 26px;
+    }
+
+    .carousel-caption p {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 12px;
+    }
+
+    #my-badge{
+        display: none;
+    }
+
+    .footerText{
+        font-size: 16px;
+        margin-bottom: 5%;
+    }
+
+
+    .col-6{
+        width: 90%;
+    }
+
+    .col-md-5{
+        width: 60%;
+    }
+
+    /*questionnaire*/
+
+    .mobile-select{
+        display: inline !important;
+        width: 30%;
+    }
+
+    .desktop-select{
+        display: none !important;
+    }
+
+    /* coursera course display*/
+
+    .course-name{
+        font-size: 16px;
+    }
+
+    .col-3.leftdiv{
+        display: none;
+    }
+
+    .table.table-dark.table-striped{
+        font-size: 10px;
+    }
+
+    .modal-dialog-scrollable .modal-content{
+        font-size: 12px;
+    }
+
+    .course-table{
+        font-size: 16px;
+        table-layout: fixed;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .quote{
+        font-size: 16px;
+    }
+}
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1300px) {
+
+    .sizingText-div-2 {
+        top: 40%;
+        transform: translateY(-50%);
+        margin-right: 40%;
+    }
+
+    .sizingText-div-2 {
+        top: 40%;
+        transform: translateY(-40%);
+        margin-right: 40%;
+    }
+
+    .carousel-caption h1 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 36px;
+    }
+
+    .carousel-caption p {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 18px;
+    }
+
+    #my-badge{
+        display: none;
+}
+}
+
+@media only screen and (min-width: 1301px) and (max-width: 1800px) {
+    .sizingText-div-2 {
+        top: 40%;
+        transform: translateY(-32%);
+        margin-right: 40%;
+    }
+
+
+    .carousel-caption h1 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 46px;
+    }
+
+    .carousel-caption p {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 24px;
+    }
+}
+
+
+.test {
+    background-color: black;
+}
+
+@keyframes col {
+     0% {background-color:red}
+    50% {background-color:green}
+    100% {background-color:blue}
+}
+
+

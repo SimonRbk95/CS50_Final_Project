@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Input
+{% endblock %}
+
+{% block main %}
+
+<!--Select Menu-->
+<div class="container-fluid">
+  <div class="container-lg result-background">
+    <div class="row justify-content-center border border-dark">
+      <div class="col-12 text-center">
+        <h1>Personalized Suggestions</h1><br>
+          <h5 style="color: lightgray">Based on your input, you will get personalized <i>course</i> and <i>video</i> suggestions to elevate your digital skills.</h5>
+      </div>
+    </div>
+    <form action="/qs" method="post">
+      <div class="row justify-content-center title">
+
+        <!--select menu q1-->
+        <div class="col-10 text-center title menu-margins">
+          <h5>How comfortable are you with basic technologies (Cloud, Internet, Computer Science basics)?</h5>
+          <!--select menu desktop-->
+          <select required class="selectpicker show-tick desktop-select" name="q1">
+            {% for option in options_q %}
+              <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+          </select>
+          <!--select menu mobile-->
+          <select required class="form-select mobile-select" aria-label="Default select example" name="q1">
+            {% for option in options_q %}
+              <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!--select menu q2-->
+        <div class="col-10 text-center menu-margins">
+          <h5>How comfortable are you with programming?</h5>
+          <!--select menu desktop-->
+          <select required class="selectpicker show-tick desktop-select" name="q2">
+            {% for option in options_q %}
+              <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+          </select>
+          <!--select menu mobile-->
+          <select required class="form-select mobile-select" aria-label="Default select example" name="q2">
+            {% for option in options_q %}
+              <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!--select menu q3 all devices-->
+        <div class="col-12 text-center menu-margins">
+          <h5>Please select up to three areas of your interest:</h5>
+            <select required class="selectpicker" id="select_1" name="q3" data-selected-text-format="count" multiple data-live-search="true" title='Choose three from...'>
+              {% for option in options_q3 %}
+                <option value="{{ loop.index0 }}">{{ option }}</option>
+              {% endfor %}
+            </select>
+            <button class="btn btn-light desktop-select" id="btnDeselect">Deselect</button>
+        </div>
+
+        <!-- select menu q4 all devices-->
+        <div class="col-12 text-center menu-margins">
+          <h5>Please select your goals:</h5>
+            <select required class="selectpicker show-tick" id="select_2" multiple name="q4" title="Choose any from...">
+              {% for option in options_q4 %}
+                <option value="{{ loop.index0 }}">{{ option }}</option>
+              {% endfor %}
+            </select>
+            <button class="btn btn-light desktop-select" id="btnDeselect_2">Deselect</button>
+        </div>
+        <div class="col-12 text-center">
+              <button type="submit" class="btn btn-outline-light btn-lg" id="btn-submit-questionnaire">Submit</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
